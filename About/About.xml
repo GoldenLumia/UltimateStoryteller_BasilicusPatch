@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-<name>Ultimate Storyteller - Basilicus Patch</name>
+<name>Ultimate Storyteller (1.4) - Basilicus Patch</name>
 <author>GoldenLumia, VPE Team</author>
 <supportedVersions>
 	<li>1.4</li>
@@ -34,6 +34,8 @@
 	<li>Gold.UltimateStoryteller</li>
 </loadAfter>
 <description>
-This patch adds support for Vanilla Psycasts Expanded. When enabled, the Ultimate Storyteller will include an adjustment RNG chance of pawns spawning with psycasts, like Basilicus Bestower also does. RNG Settings are seperate between Basilicus and the Ultimate Storyteller.
+This patch adds support for the storyteller Basilicus Bestower from Vanilla Psycasts Expanded. When enabled, the Ultimate Storyteller will include an adjustable RNG chance of pawns spawning with psycasts, like Basilicus Bestower also does. RNG Settings are seperate between Basilicus and the Ultimate Storyteller, you -should- be able to run both with seperate chances.
+
+Source Code is included and available here: https://github.com/GoldenLumia/UltimateStoryteller_BasilicusPatch . You're free to do whatever you want with it, the code is a mess and was cobbled together while sleep deprived. Enjoy(?)
 </description>
 </ModMetaData>
