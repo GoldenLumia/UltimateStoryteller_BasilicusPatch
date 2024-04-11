@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.4\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -57,12 +57,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="VanillaPsycastsExpanded">
-      <HintPath>H:\LeSteamHasArrived\steamapps\common\RimWorld\Mods\2842502659\1.4\Assemblies\VanillaPsycastsExpanded.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>H:\LeSteamHasArrived\steamapps\common\RimWorld\Mods\2842502659\1.5\Assemblies\VanillaPsycastsExpanded.dll</HintPath>
     </Reference>
     <Reference Include="VFECore">
-      <HintPath>H:\LeSteamHasArrived\steamapps\common\RimWorld\Mods\2023507013\1.4\Assemblies\VFECore.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>H:\LeSteamHasArrived\steamapps\common\RimWorld\Mods\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

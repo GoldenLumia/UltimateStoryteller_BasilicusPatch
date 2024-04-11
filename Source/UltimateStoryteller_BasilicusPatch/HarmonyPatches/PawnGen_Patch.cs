@@ -14,16 +14,18 @@ namespace UltimateStoryteller_BasilicusPatch
     public class PawnGen_Patch
     {
         [HarmonyPostfix]
-        public static void Postfix(Pawn __result)
+        public static void Postfix(Pawn __result, PawnGenerationRequest request)
         {
-            PawnKindAbilityExtension_Psycasts psycastExtension = __result.kindDef.GetModExtension<PawnKindAbilityExtension_Psycasts>();
+            if (__result == null || request.AllowedDevelopmentalStages.Newborn()) return;
+
+            var psycastExtension = __result.kindDef.GetModExtension<PawnKindAbilityExtension_Psycasts>();
 
             CompAbilities comp = null;
 
-            if (Find.Storyteller.def == USBP_DefOf.UltimateStoryteller && __result.RaceProps.intelligence >= Intelligence.Humanlike)
+            if (Find.Storyteller?.def == USBP_DefOf.UltimateStoryteller && __result.RaceProps.intelligence >= Intelligence.Humanlike)
                 if (Rand.Value < BasilicusPatch.Settings.baseSpawnChance)
                 {
-                    Hediff_Psylink psylink = __result.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicAmplifier) as Hediff_Psylink;
+                    var psylink = __result.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicAmplifier) as Hediff_Psylink;
 
                     if (psylink == null)
                     {
@@ -31,24 +33,24 @@ namespace UltimateStoryteller_BasilicusPatch
                         __result.health.AddHediff(psylink);
                     }
 
-                    Hediff_PsycastAbilities implant =
+                    var implant =
                         __result.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant) as Hediff_PsycastAbilities ??
                         HediffMaker.MakeHediff(VPE_DefOf.VPE_PsycastAbilityImplant, __result,
-                                               __result.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Brain).FirstOrFallback()) as Hediff_PsycastAbilities;
+                            __result.RaceProps.body.GetPartsWithDef(VPE_DefOf.Brain).FirstOrFallback()) as Hediff_PsycastAbilities;
 
                     if (implant.psylink == null)
                         implant.InitializeFromPsylink(psylink);
 
-                    PsycasterPathDef path = DefDatabase<PsycasterPathDef>.AllDefsListForReading.Where(ppd => ppd.CanPawnUnlock(__result)).RandomElement();
+                    var path = DefDatabase<PsycasterPathDef>.AllDefsListForReading.Where(ppd => ppd.CanPawnUnlock(__result)).RandomElement();
                     implant.UnlockPath(path);
 
                     comp ??= __result.GetComp<CompAbilities>();
 
-                    IEnumerable<AbilityDef> abilities = path.abilities.Except(comp.LearnedAbilities.Select(ab => ab.def));
+                    var abilities = path.abilities.Except(comp.LearnedAbilities.Select(ab => ab.def));
 
                     do
                     {
-                        if (abilities.Where(ab => ab.GetModExtension<AbilityExtension_Psycast>().PrereqsCompleted(comp)).TryRandomElement(out AbilityDef ab))
+                        if (abilities.Where(ab => ab.GetModExtension<AbilityExtension_Psycast>().PrereqsCompleted(comp)).TryRandomElement(out var ab))
                         {
                             comp.GiveAbility(ab);
                             if (implant.points <= 0)
