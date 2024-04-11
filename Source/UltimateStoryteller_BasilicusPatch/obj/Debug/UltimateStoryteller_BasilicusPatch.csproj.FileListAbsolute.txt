@@ -1,4 +1,0 @@
-E:\Git\UltimateStoryteller_PsycastPatch\1.4\Assemblies\UltimateStoryteller_BasilicusPatch.dll
-E:\Git\UltimateStoryteller_PsycastPatch\Source\UltimateStoryteller_BasilicusPatch\obj\Debug\UltimateStoryteller_BasilicusPatch.csproj.AssemblyReference.cache
-E:\Git\UltimateStoryteller_PsycastPatch\Source\UltimateStoryteller_BasilicusPatch\obj\Debug\UltimateStoryteller_BasilicusPatch.csproj.CoreCompileInputs.cache
-E:\Git\UltimateStoryteller_PsycastPatch\Source\UltimateStoryteller_BasilicusPatch\obj\Debug\UltimateStoryteller_BasilicusPatch.dll
