@@ -4,8 +4,8 @@ using HarmonyLib;
 using RimWorld;
 using VanillaPsycastsExpanded;
 using Verse;
-using VFECore.Abilities;
-using AbilityDef = VFECore.Abilities.AbilityDef;
+using VEF.Abilities;
+using AbilityDef = VEF.Abilities.AbilityDef;
 
 namespace UltimateStoryteller_BasilicusPatch
 {
